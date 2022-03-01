@@ -1,0 +1,14 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item>
+           <lightning-button icon-name="custom:custom1" variant="brand-outline" label="Previous" title="Previous page" onclick={dispatchPrevious} class="slds-m-left_x-small"></lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="grow"></lightning-layout-item>
+        <lightning-layout-item alignment-bump="right">
+           <lightning-button icon-name="custom:custom1" icon-position="right" variant="brand-outline" label="Next" title="Next page" onclick={dispatchNext} class="slds-m-left_x-small"></lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>    
+    <lightning-layout class="slds-m-left_x-small" if:true={name}>
+        <h1 class="slds-box">{name}</h1>
+    </lightning-layout>
+</template>

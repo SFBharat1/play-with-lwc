@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title={name} icon-name="custom:custom1">
+        <lightning-layout>
+            <lightning-layout-item padding="around-small">
+                <img src={photoUrl} alt="user">
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                    <lightning-formatted-email value={email}></lightning-formatted-email>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <lightning-formatted-phone value={phone}></lightning-formatted-phone>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                {userId}<lightning-helptext class="slds-m-bottom_xx-small" content="your Id"></lightning-helptext>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

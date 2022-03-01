@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title='One Account' icon-name="standard:account">
+        <template for:each={accounts.data} for:item="acc" >
+            <li key={acc.Id} class="slds-m-around_small">
+                {acc.Name}
+            </li>
+        </template>
+    </lightning-card>
+    <!--DISPLAY CONTACT RECORDS-->
+    <lightning-card title='Contact List' icon-name="standard:contact">
+        <lightning-button label="Show" slot="actions" onclick={handleJsButton}></lightning-button>
+        <div if:true={contacts.length}>
+            <span style="color:green;" class="slds-m-around_small successCls">Contact Record Found!</span>
+            <template for:each={contacts} for:item="con">
+                <li key={con.Id} class="slds-m-around_small">
+                    <lightning-formatted-text value={con.LastName}></lightning-formatted-text> &nbsp;
+                    <lightning-formatted-email value={con.Email}></lightning-formatted-email>
+                </li>
+            </template>
+        </div>
+        <div if:false={contacts.length}>
+            <span style="color:red;" class="slds-m-around_small errCls">No Result</span>
+        </div>
+    </lightning-card>
+</template>

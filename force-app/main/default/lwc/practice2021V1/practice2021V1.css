@@ -1,0 +1,7 @@
+:host {
+    --sds-c-button-brand-color-background: purple;
+    --sds-c-button-brand-color-border: purple;
+    --sds-c-button-brand-color-background-hover: orange;
+
+    /* Other CSS custom properties here */
+  }

@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="PAGE NUMBER" icon-name="custom:custom1">
+        <lightning-badge class="slds-m-around_small" label={pageNumber}></lightning-badge><br/>
+        <div class="slds-m-around_small">
+        <c-pagination-events name={parentName} onprevious={decrease} onnext={increase}></c-pagination-events>
+        </div>
+         <div class="slds-m-around_small">
+            <c-pagination-events name={parentName} onprevious={decrease} onnext={increase}></c-pagination-events>
+        </div>
+         <div class="slds-m-around_small">
+            <c-pagination-events name={parentName} onprevious={decrease} onnext={increase}></c-pagination-events>
+        </div>
+        <br/><br/>
+        <lightning-input label="Name" value={parentName} onchange={handlenameChange}></lightning-input>
+    </lightning-card>
+    
+</template>

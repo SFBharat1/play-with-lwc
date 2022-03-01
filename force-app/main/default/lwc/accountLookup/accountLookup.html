@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="ApexWireMethodWithParams" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <lightning-input type="search" onchange={handleKeyChange} class="slds-m-bottom_small" label="Search" value={searchKey}></lightning-input>
+            <template if:true={accounts.data}>
+                <template for:each={accounts.data} for:item="acc">
+                    <div key={acc.Id}><a onclick={methodClick} name={acc.Id}>{acc.Name}</a></div>
+                </template>
+            </template>
+            <template if:true={accounts.error}>
+                {accounts.error}
+            </template>
+        </div>
+    </lightning-card>
+</template>

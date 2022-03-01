@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Documents Attached" icon-name="custom:custom42">
+        <div class="slds-m-top_small">
+            <template for:each={attachmentList} for:item="item">
+                <div key={item.Id} >
+                    <div class="slds-box slds-wrap slds-grid">
+                        <div class="slds-m-top_small slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-size_12-of-12"><strong>{item.Title}</strong></div>
+                        <div class="slds-m-top_small slds-col slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-size_12-of-12"><a href={item.url} download>Download</a></div>
+                        <div class="slds-m-top_small slds-col slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-size_12-of-12">
+                            <lightning-button data-id={item.ContentDocumentId} label="preview" variant="brand" onclick={handlePreview}></lightning-button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

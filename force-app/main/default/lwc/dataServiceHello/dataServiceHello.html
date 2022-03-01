@@ -1,0 +1,75 @@
+<template>
+    <div class="slds-m-around_small slds-box" style="background-color:gray">
+        <lightning-layout class="slds-m-bottom_medium">
+            <lightning-layout-item>
+                <lightning-icon icon-name="standard:contact"></lightning-icon>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <p class="slds-m-left_small">Record Form</p>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-record-form
+            object-api-name="Contact"
+            record-id="0032w00000LsYJQAA3"
+            fields={fields}
+        ></lightning-record-form>
+    </div>
+    <div class="slds-m-around_small slds-box" style="background-color:lightblue">
+        <lightning-layout class="slds-m-bottom_medium">
+            <lightning-layout-item>
+                <lightning-icon icon-name="standard:contact"></lightning-icon>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <p class="slds-m-left_small">Lightning Record View Form</p>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-record-view-form
+            object-api-name="Contact"
+            record-id="0032w00000LsYJQAA3"
+        >
+        <lightning-output-field
+            field-name="Name">
+        </lightning-output-field>
+        <lightning-output-field
+            field-name="Email">
+        </lightning-output-field>
+        <lightning-output-field
+            field-name="Phone">
+        </lightning-output-field>
+        <lightning-output-field
+            field-name="AccountId">
+        </lightning-output-field>
+        </lightning-record-view-form>
+    </div>
+    <div class="slds-box slds-m-around_small" style="background-color:lightcoral">
+        <lightning-layout class="slds-m-bottom_small">
+            <lightning-layout-item>
+                <lightning-icon icon-name="standard:contact"></lightning-icon>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <p class="slds-m-left_small">Record Edit Form</p>
+            </lightning-layout-item>
+        </lightning-layout>   
+            <lightning-record-edit-form
+                object-api-name="Contact"
+                record-id="0032w00000LsYJQAA3"
+            >
+            <lightning-messages></lightning-messages>
+                <lightning-input-field
+                    field-name="Name">
+                </lightning-input-field>
+                <lightning-input-field
+                    field-name="Email">
+                </lightning-input-field>
+                <lightning-input-field
+                    field-name="Phone">
+                </lightning-input-field>
+                <lightning-button
+                    label="Save"
+                    name="Save"
+                    type="Submit"
+                ></lightning-button>
+            </lightning-record-edit-form>
+       
+    </div>
+</template>

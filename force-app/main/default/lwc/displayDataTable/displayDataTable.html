@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Data Table" icon-name="standard:contact">
+        <lightning-button label="Fatch Contact" onclick={handleClick} slot="actions"></lightning-button>
+        <div class="slds-m-left_small">
+            <lightning-input
+                type="toggle"
+                value="Show Datatabel"
+                checked={check}
+                onchange={handleChange}
+            ></lightning-input>
+           <div if:true={datatablecheck}> 
+                <lightning-datatable 
+                    key-field="id" 
+                    data={contactList} 
+                    columns={columns}
+                    hide-checkbox-column
+                ></lightning-datatable>
+            </div> 
+        </div>
+</lightning-card>
+</template>

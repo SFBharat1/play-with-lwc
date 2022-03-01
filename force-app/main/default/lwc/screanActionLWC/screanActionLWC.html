@@ -1,0 +1,25 @@
+<template>
+    <div class="slds-card slds-m-around_small">
+        <p class="slds-text-heading_large slds-text-color_success">
+            <lightning-icon icon-name="action:approval" alternative-text="Approved" title="Approved"></lightning-icon>
+            THIS IS TEST PURPOSE
+        </p>
+        <div class="slds-m-around_small">
+            <lightning-input
+                type="search"
+                label="Opportunity Name"
+                onchange={handleNameChange}
+            ></lightning-input>
+        </div>
+        <div if:true={opportunityList} class="slds-box slds-m-top_medium">
+            <lightning-datatable
+                key-field="Id"
+                columns={fields}
+                data={opportunityList}
+            ></lightning-datatable>
+        </div>
+        <div if:false={opportunityList} class="slds-box slds-m-top_medium">
+            No Opportunity line found
+        </div>
+    </div>
+</template>

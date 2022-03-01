@@ -1,0 +1,25 @@
+<template>
+
+        <lightning-card title="Select Deals" icon-name="standard:opportunity">
+            <div class="slds-m-around_small">
+                <lightning-input
+                  type="search"
+                  name="enter-search"
+                  label="Choose Opportunity"
+                  value={searchKey}
+                  onchange={handleSearchChange}
+                ></lightning-input>
+            </div>
+
+            <div if:true={searchResultopportunityList} class="slds-m-around_small slds-m-top_large">
+                <lightning-datatable
+                    key-field="Id"
+                    columns={oppColumns}
+                    data={searchResultopportunityList}
+                ></lightning-datatable>
+            </div>
+            <div if:false={searchResultopportunityList} class="slds-m-around_small slds-m-top_large">
+                <span class="slds-align_absolute-center slds-box slds-m-around_small slds-theme_error">No Opportunity Found</span>
+            </div>
+        </lightning-card>
+</template>

@@ -1,0 +1,67 @@
+<template>
+    <div class="slds-m-around_large slds-page-header slds-text-color_inverse" style="width: 94%;">
+        Welcome to field validation checks
+    </div>
+    <div class="slds-card">
+        <div class="slds-einstein-header slds-card__header">
+            <span class="slds-text-heading_small">User Registration</span>
+            <br />
+            <br />
+            <div class="slds-align_absolute-center">
+                <lightning-radio-group label="Services" name="Services" options={Services} value={selectedService}
+                    type="button"></lightning-radio-group>
+            </div><br /><br />
+            <lightning-input type="text" label="User Name" name="User Name" value={usname} onchange={handleUsnameChange}
+                required></lightning-input>
+            <br />
+            <lightning-input type="password" label="Password" name="Password" onchange={handlePasswdChange}
+                value={password} required>
+            </lightning-input><br />
+            <lightning-input type="email" class="emailCls" label="Email" name="Email" value={email}
+                onchange={handleEmailChange} required></lightning-input><br />
+            <lightning-layout>
+                <lightning-layout-item>
+                    Administrator&nbsp; <lightning-input type="checkbox-button" label="Admin" name="male"
+                        value={userAdmin} onchange={handleAdminChange} required>
+                    </lightning-input>
+                </lightning-layout-item> &nbsp;&nbsp;
+                <lightning-layout-item>
+                    Developer&nbsp; <lightning-input type="checkbox-button" label="Developer" name="Female"
+                        value={userDev} onchange={handleDevChange} required>
+                    </lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>
+
+            <lightning-radio-group label="Gender" name="Gender" options={genderOption} type="radio"
+                onchange={handleuserGenderChange} value={userGender} required>
+            </lightning-radio-group>
+
+            <lightning-input type="file" label="Certification" name="Certification" value={userCertificatioin}
+                onchange={handleCertChange} required>
+            </lightning-input>
+            <lightning-input type="search" label="Country1" name="Country" value={userCountry} is-loading={needSpinner}
+                onchange={handleuserCountryChange}></lightning-input><br />
+            <lightning-button label="Save" variant="Brand" name="Save" class="slds-float_right" disabled={showSave}
+                onclick={handleSave}>
+            </lightning-button>
+            <br /> <br />
+        </div>
+
+        <div class="slds-grid">
+            <div class="slds-col slds-size_3-of-12" style="background-color: antiquewhite !important;"
+                onfocus={setanimation}>
+                Hi
+            </div>
+            <div class="slds-col slds-size_6-of-12" style="background-color: aqua !important;" onfocus={setanimation}>
+                Hello
+            </div>
+            <div class="slds-col slds-size_3-of-12" style="background-color: blueviolet !important;"
+                onfocus={setanimation}>
+                Thanks
+            </div>
+        </div>
+    </div>
+    <div class="slds-page-header slds-m-around_large" style={dynamicColer}>
+        Good to see u late...
+    </div>
+</template>

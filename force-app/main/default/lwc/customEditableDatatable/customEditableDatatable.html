@@ -1,0 +1,42 @@
+<template>
+    <!-- <lightning-datatable
+        key-field="Id"
+        columns={fieldsList}
+        data={data}
+        hide-checkbox-column
+        draft-values={saveDraftvalue}
+        onsave={handleSave}
+        show-row-number-column
+        row-number-offset={rowOffset}
+        suppress-bottom-bar
+    ></lightning-datatable> -->
+    <lightning-layout>
+        <lightning-layout-item size="1">
+            <h1 class="slds-box slds-m-around_small">WELCOME</h1>
+        </lightning-layout-item>
+        <lightning-layout-item size="8">
+            <lightning-datatable
+            key-field="id"
+            data={data}
+            columns={fieldsList}
+            row-number-offset={rowOffset}
+            draft-values={saveDraftValue} 
+            onsave={handleSave}
+            show-row-number-column
+            hide-checkbox-column
+            >
+    </lightning-datatable>
+        </lightning-layout-item>
+    </lightning-layout>
+    <!-- <lightning-datatable
+            key-field="id"
+            data={data}
+            columns={fieldsList}
+            row-number-offset={rowOffset}
+            draft-values={saveDraftValue} 
+            onsave={handleSave}
+            show-row-number-column
+            hide-checkbox-column
+            >
+    </lightning-datatable> -->
+</template>

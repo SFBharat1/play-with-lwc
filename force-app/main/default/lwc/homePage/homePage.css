@@ -1,0 +1,19 @@
+div.body{
+    background-color: pink;
+}
+
+.contaner{
+    max-width: 100%;
+    overflow-x: scroll;
+}
+.container-one{
+    min-width: 100%;
+    background-color: rgb(252, 170, 227);
+}
+.container-two{
+    min-width: 50%;
+    background-color:rgb(243, 181, 88);
+}
+.cardHight{
+    height: 27rem;
+}

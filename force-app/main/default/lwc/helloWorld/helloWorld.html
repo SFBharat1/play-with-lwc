@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="HelloWorld" icon-name="custom:custom14">
+      <div class="slds-m-around_medium">
+        <p>Hello, {greeting}!</p>
+        <lightning-input label="Name" value={greeting} onchange={changeHandler}></lightning-input>
+      </div>
+      <lightning-button label="New" slot="actions"></lightning-button>
+      <lightning-button label="Refresh" slot="actions"></lightning-button>
+
+        <lightning-button variant="destructive-text" label="Close" title="Close" onclick={handleClose}></lightning-button>
+    </lightning-card>
+  </template>

@@ -1,0 +1,66 @@
+<template>
+    <lightning-card title="Hello" icon-name="custom:custom14">
+        <!-- REACTIVE JS PROPERTIES   -->
+        <div class="slds-m-around_medium">
+            <p>Hello, {greeting}!</p>
+            <lightning-input
+                label="Name"
+                value={greeting}
+                onchange={changename}
+            ></lightning-input>
+        </div>
+        <lightning-input class="slds-m-around_medium"
+            label="Name Copy"
+            value={greeting}
+        ></lightning-input>
+    </lightning-card>
+
+    <!--FOR EACH TO ITERATE OVER LIST OF OBJECTS-->
+    <div class="slds-box" style="background-color:aquamarine">
+        <template for:each={contacts} for:item="con">
+            <li key={con.Id}>
+                <p><lightning-formatted-text value={con.Name}></lightning-formatted-text></p>
+                <p><lightning-formatted-email value={con.email}></lightning-formatted-email></p>
+            </li>
+        </template>
+    </div>
+
+    <div class="slds-m-around_medium">
+        <!--CHECKBOX TOGGEL DIV -->
+        <lightning-input
+            type="checkbox"
+            label="Show details"
+            onchange={checkboxevent}
+        ></lightning-input>
+        <div if:true={showvalue} class="slds-box slds-m-around_medium">
+            <p>This is for the link to another component <!--a href="#" onclick={handlenavi}>link</a--></p>
+            <lightning-button variant="success" label="Navigate To LWC" title="Successful action" onclick={handlenavi}
+        class="slds-m-left_x-small"></lightning-button>
+        </div>
+    </div>
+
+    <lightning-card title="Create Account" icon-name="standard:account">
+        <!--CREATE NEW ACCOUNT -->
+        <div class="slds-card slds-box slds-m-around_small">
+            <lightning-input
+                type="text"
+                label="Id"
+                disabled
+                value={accountId}
+            ></lightning-input>
+            <lightning-input
+                type="text"
+                label="Name"
+                value={accname}
+                onchange={handlenamechange}
+                class="slds-var-m-bottom_x-small"
+            ></lightning-input>
+            <lightning-button
+                variant="brand"
+                label="Create Account"
+                onclick={createAccount}
+            ></lightning-button>
+        </div>
+    </lightning-card>
+
+</template>

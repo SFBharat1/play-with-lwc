@@ -1,0 +1,17 @@
+<template>
+    <lightning-layout multiple-rows="true">
+        <lightning-layout-item flexibility="auto">
+                <lightning-record-view-form
+                    record-id={userRecordId}
+                    object-api-name="Contact">
+                        <div class="slds-box">
+                            <lightning-output-field field-name={userFieldName}>
+                            </lightning-output-field>
+                        </div>
+                </lightning-record-view-form>
+        </lightning-layout-item>
+        <lightning-layout-item>
+            <lightning-icon icon-name="utility:edit" size="x-small" alternative-text="Edit" title="Edit"></lightning-icon>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

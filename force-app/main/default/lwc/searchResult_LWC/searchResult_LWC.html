@@ -1,0 +1,14 @@
+<template>
+    <div class="slds-box">
+        <div class="slds-m-around_medium">
+            <template if:true={resultAccounts.data}>
+                <template for:each={resultAccounts.data} for:item="acc">
+                    <p key={acc.Id}>{acc.Name}</p>
+                </template>
+            </template>
+            <template if:true={resultAccounts.error}>
+                {resultAccounts.error}
+            </template>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,49 @@
+<template>
+    <lightning-card title="Add Contact Role" icon-name="standard:contact">
+        <!-- <div class="slds-form-element">
+            <div class="slds-form-element__control">
+                <div class="slds-combobox_container">
+                    <div id="box"  aria-expanded="true" aria-haspopup="listbox" role="combobox">
+                        <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none"> -->
+                            <template if:true={isSelected}>
+                                <div class="slds-pill-container">
+                                    <lightning-pill name={SelectedNameId} label={selectedName} class="pillSize">
+                                        <lightning-icon icon-name="standard:contact"></lightning-icon>
+                                    </lightning-pill>
+                                </div>
+                            </template>
+                        <template if:false={isSelected}>
+                            <lightning-input
+                                type="search"
+                                onchange={handleChange}
+                                label="Search"
+                                value={searchKey}
+                            ></lightning-input>
+                            <div if:false={contacts}>
+                                <div class="slds-box slds-m-around_small slds-text-color_error">Please Enter Contact name</div>
+                            </div>
+                            <div if:true={contacts}>
+                                <!-- <div class="slds-box slds-m-around_small slds-text-color_success">Please select contact</div> -->
+                                <div id="listbox-id-1" class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid" role="listbox">
+                                    <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                                        <template for:each={contacts} for:item="item">
+                                            <li key={item.id} onclick={handleSelect} data-id={item.Id} role="presentation" data-name={item.Name}>
+                                                <span class="slds-lookup__item-action slds-lookup__item-action--label" role="option">
+                                                    <lightning-icon class="slds-icon slds-icon--small slds-icon-text-default" icon-name="standard:contact" size="small"></lightning-icon>
+                                                    <span class="slds-truncate">{item.Name}</span>
+                                                </span>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+                            </div>
+                        </template>
+                        <!-- </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+                            
+       
+    </lightning-card>
+</template>

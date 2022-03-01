@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Opportunity List" icon-name="standard:opportunity">
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-input
+                    type="toggle"
+                    onchange={handletoggel}
+                ></lightning-input>
+                <lightning-layout-item>
+
+                </lightning-layout-item>
+            </lightning-layout-item>
+        </lightning-layout>
+
+        <div if:true={showDatatable} class="slds-m-around_small">
+            <lightning-datatable
+                key-field="id"
+                data={opportunityList}
+                columns={columns}
+                onrowselection={getSelectedName}
+            ></lightning-datatable>
+        </div>
+        <lightning-button slot="actions" label="Add Product" variant="Brand" disabled={addProductCheck}></lightning-button>
+    </lightning-card>
+</template>

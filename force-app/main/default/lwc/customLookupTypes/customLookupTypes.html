@@ -1,0 +1,123 @@
+<template>
+    <div class="fullsize slds-card" style="width:100%;height:100%; " title="CUSTOM LOOKUP TYPE">
+
+        <div class="slds-page-header slds-m-around_small" style="width:98%;">
+            <div class="slds-page-header__row">
+                <div class="slds-page-header__col-title">
+                    <div class="slds-media">
+                        <div class="slds-media__figure">
+                            <span class="slds-icon_container slds-icon-standard-opportunity" title="opportunity">
+                                <span class="slds-icon slds-page-header__icon" aria-hidden="true">
+                                    <lightning-icon icon-name="custom:custom1"></lightning-icon>
+                                </span>
+                                <span class="slds-assistive-text">Assignment Resource Calander</span>
+                            </span>
+                        </div>
+                        <div class="slds-media__body">
+                            <div class="slds-page-header__name">
+                                <div class="slds-page-header__name-title">
+                                    <h1>
+                                        <span class="slds-page-header__title slds-truncate"
+                                            title="Assignment Resource Calander">Assignment Resource Calander</span>
+                                    </h1>
+                                </div>
+                            </div>
+                            <!-- <p class="slds-page-header__name-meta">Mark Jaeckal • Unlimited Customer • 11/13/15</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slds-m-around_x-small  slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-4">
+                <span if:true={isNotSelected}>
+                    <lightning-input name="searchAcc" type="search" label="Account" placeholder="Please search here"
+                        onchange={handleKeyPress}>
+                    </lightning-input>
+                    <p class="slds-box slds-p-around_xx-small" if:true={AccountsList.data}>
+                        <template for:each={AccountsList.data} for:item="acc">
+                            <li key={acc.Id}><a href="#" data-accname={acc.Name} onclick={generateEvent}>{acc.Name}</a>
+                            </li>
+                        </template>
+                    </p>
+                </span>
+                <span if:false={isNotSelected}>
+                    <!-- <lightning-pill-container items={item}></lightning-pill-container> -->
+                    <lightning-pill label={finalUserInput} onremove={handleRemove}></lightning-pill>
+                </span>
+            </div>
+            <div class="slds-col slds-size_1-of-4">
+                2
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                        <div class="slds-combobox_container">
+                            <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open">
+                                <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right"
+                                    role="none">
+                                    <lightning-input type="text" id="combobox-id-3" aria-activedescendant="option1"
+                                        aria-autocomplete="list" aria-controls="listbox-id-3" aria-expanded="true"
+                                        aria-haspopup="listbox" autocomplete="off" role="combobox"
+                                        placeholder="Search Practice..."></lightning-input>
+                                    <span
+                                        class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+                                        <span class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default"
+                                            aria-hidden="true">
+                                            <lightning-icon icon-name="util:search"></lightning-icon>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div id="listbox-id-3"
+                                    class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid"
+                                    role="listbox">
+                                    <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                                        <li role="presentation" class="slds-listbox__item">
+                                            <div aria-selected="true" id="option1"
+                                                class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta slds-has-focus"
+                                                role="option" tabindex="0">
+                                                <span class="slds-media__figure slds-listbox__option-icon">
+                                                    <span class="slds-icon_container slds-icon-standard-account">
+                                                        <span class="slds-icon slds-icon_small" aria-hidden="true">
+                                                            <lightning-icon icon-name="custom:custom2"></lightning-icon>
+                                                        </span>
+                                                    </span>
+                                                </span>
+                                                <span class="slds-media__body">
+                                                    <span
+                                                        class="slds-listbox__option-text slds-listbox__option-text_entity">Burlington
+                                                        Textiles Corp of America</span>
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IF SELECTED  -->
+                <span class="slds-pill slds-pill_link">
+                    <a href="#" class="slds-pill__action" title="Full pill label verbiage mirrored here">
+                        <span class="slds-pill__label">Pill Label</span>
+                    </a>
+                    <lightning-button class="slds-button slds-button_icon slds-button_icon slds-pill__remove"
+                        title="Remove">
+                        <span class="slds-button__icon" aria-hidden="true">
+                            <lightning-icon icon-name="utility:close"></lightning-icon>
+                        </span>
+                        <span class="slds-assistive-text">Remove</span>
+                    </lightning-button>
+                </span>
+
+            </div>
+            <div class="slds-col slds-size_1-of-4">
+                <h1 class="slds-m-around_small">Custom lookup</h1>
+                <span style="background-color:aqua">This is form developer org...</span><br />
+                <c-custom-lookup obj-name="Account" search-placeholder="Search Accounts" icon-name="standard:account"
+                    onlookupselected={handleAccountSelection}> </c-custom-lookup>
+            </div>
+        </div>
+    </div>
+    <!-- <div style="slds-card; width:100%;height:100%; "></div> -->
+</template>

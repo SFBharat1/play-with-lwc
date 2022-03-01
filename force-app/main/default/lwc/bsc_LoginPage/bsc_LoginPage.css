@@ -1,0 +1,25 @@
+.center {
+    width: 100%;
+    border: 5px solid #FFFF00;
+}
+.bg { 
+    /* The image used */ background-image: url("https://resilient-hawk-weoi1o-dev-ed--c.documentforce.com/servlet/servlet.ImageServer?id=0152w000000g0xR&oid=00D2w00000Dq5Nl&lastMod=1628566058000"); 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    }
+
+.input-icon{
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    height: 24px;
+}
+.left-icon{
+    left:17px;
+}
+.right-icon{
+    right: 17px;
+}

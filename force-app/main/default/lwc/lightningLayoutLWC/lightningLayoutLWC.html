@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title={message} icon-name="custom:custom14">
+        <lightning-layout>
+            <lightning-layout-item padding="around-small">
+                <img src={image}  width="300" height="200"/>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+            <lightning-layout-item class="header-column" padding="around-small">
+                <p><lightning-formatted-name value={name}></lightning-formatted-name></p>
+                <p><lightning-formatted-text value={title}></lightning-formatted-text></p>
+                <p><lightning-formatted-text value={experience}></lightning-formatted-text></p>
+                <p><lightning-formatted-phone value={phone}></lightning-formatted-phone></p>
+                <p><lightning-formatted-email value={email}></lightning-formatted-email></p>
+            </lightning-layout-item>
+        </lightning-layout-item>
+        <lightning-layout-item  padding='around-small'>
+            <c-pagination-parent></c-pagination-parent>
+        </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small">
+                <lightning-input disabled value={message} placeholder="please enter your title" onchange={displayMessage}></lightning-input>
+                </lightning-layout-item>
+                    <lightning-layout-item class="slds-m-top_medium" padding="around-small">
+                        <lightning-button disabled variant="brand" name="Refresh" label="Refresh" onclick={handlerRefresh}></lightning-button>
+                    </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
